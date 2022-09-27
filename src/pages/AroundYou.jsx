@@ -9,7 +9,7 @@ const AroundYou = () => {
     const [loading, setLoading] = useState(true);
     const { activeSong, isPlaying } = useSelector((state) => state.player);
 
-    useEffect(() => { axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_DyqCqpfbcTR1CjqynRr9WQfWxVJww`).then(res => setCountry(res?.data?.location?.country)).catch((err) => console.log(err)).finally(() => setLoading(false)) }, [country]);
+    useEffect(() => { axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${process.env.GEO_API_KEY}`).then(res => setCountry(res?.data?.location?.country)).catch((err) => console.log(err)).finally(() => setLoading(false)) }, [country]);
 
     const { data, isFetching, error } = useGetSongsByCountryQuery({ countryCode: country });
 
