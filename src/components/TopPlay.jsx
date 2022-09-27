@@ -39,20 +39,23 @@ const TopPlay = () => {
           <Link to='/top-charts'>
             <p className="text-gray-300 text-base cursor-pointer">See more</p>
           </Link>
-          <div className="mt-4 flex flex-col gap-1">
-            {topPlays?.map((song, i) => <TopChartCard song={song} key={song.key} i={i} />)}
-          </div>
         </div>
-      </div>
-      <div className="w-full flex flex-col mt-8"><div className="flex flex-row justify-between items-center">
-        <h2 className="text-white font-bold">Top Artists</h2>
-        <Link to='/top-artists'>
-          <p className="text-gray-300 text-base cursor-pointer">See more</p>
-        </Link>
+
         <div className="mt-4 flex flex-col gap-1">
           {topPlays?.map((song, i) => <TopChartCard song={song} key={song.key} i={i} />)}
         </div>
       </div>
+
+      <div className="w-full flex flex-col mt-8">
+        <div className="flex flex-row justify-between items-center">
+          <h2 className="text-white font-bold">Top Artists</h2>
+          <Link to='/top-artists'>
+            <p className="text-gray-300 text-base cursor-pointer">See more</p>
+          </Link>
+        </div>
+        <div className="mt-4 flex flex-col gap-1">
+          {topPlays?.map((song, i) => <TopChartCard song={song} key={song.key} i={i} />)}
+        </div>
       </div>
 
     </div>
